@@ -19,6 +19,7 @@ session_start();
 
       if ($get2 == 1) {
         $_SESSION["username"] = $username;
+        $_SESSION["id"] = $get["id"];
       } else {
       	echo "<div style='text-align: center; background: #e74c3c; padding:10px; color:white;'>Wrong username or password</div>";
       }

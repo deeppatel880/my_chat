@@ -50,7 +50,7 @@
          			$.post("Verify/deactivate.php", {oldpassword1:oldpassword1},function(data){
          				$("#results").html(data);
          				if(data == "<div style='text-align: center; background: #2ecc71; padding:10px;color:white;'>Your account has been deactivated</div>"){
-         					location.reload(true);
+         					location.reload();
          				}else{
          					$('#deactivate1').effect("shake",{times: 4}, 600);
          				}
@@ -58,10 +58,22 @@
          			});
          			return false;
          		});
+         		$("#range").change(function(){
+         			var slider = $("range").val();
+         			$.post("messege.php",{slider:slider},function(){
+         				$("#data").html("<p style='color:#3498db;'>Refresh time Interval has been updated</p>")
+         			});
+         			return false;
+         		});
          	});
          </script>
+         <?php 
+
+          ?>
 </head>
 <body>
+<?php if(!isset($username)){header("location: index.php") ?>
+<?php } else{ ?>
 <div id="results"></div>
 <h3> Settings - <?php echo strtoupper($username) ?></h3>
 <div id="changeuser">
@@ -82,9 +94,10 @@
 </div>	
 <div id="deactivate1" style="margin-top: 30px; padding: 5px; padding-bottom: 2px; ">
 	<form action="" method="post">
-		<input type="password" name="oldpassword1" id="oldpassword1" placeholder="Old Password"></input>
+		<input type="password" name="oldpassword1" id="oldpassword1" placeholder="Password"></input>
 		<input type="submit" name="deactivate" id="deactivate" value="Deactivate Account"></input>
 	</form>
 </div>
 </body>
+<?php } ?>
 </html>

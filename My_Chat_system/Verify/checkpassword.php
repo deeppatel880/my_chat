@@ -19,8 +19,7 @@ if(!empty($_POST['oldpassword']) && !empty($_POST['newpassword']) && !empty($_PO
 		$row = mysqli_fetch_assoc($query);
 
 		$oldpassworddb = $row['password'];
-		$olddbpass = md5($oldpassworddb);
-		if($olddbpass == $oldpassword){
+		if($oldpassworddb == md5($oldpassword)){
 			$q = mysqli_query($con, "UPDATE users SET password='$confirmpassword' WHERE username='$username'");
 			if($q){
 				echo "<div style='text-align: center; background: #2ecc71; padding:10px;color:white;'>password has been updated</div>";

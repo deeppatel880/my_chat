@@ -4,7 +4,7 @@ h3{
 	font-weight: 10px;
 }
 
-#changeuser, #changepass, #deactivate1{
+#changeuser, #changepass, #deactivate1, #changeinterval{
 	margin: 0 auto;
 	width: 400px;
 	background-color: #EEE;
@@ -13,12 +13,43 @@ h3{
 	border-radius: 5px;
 }
 
-#changeuser h4, #changepass h4{
+#changeuser h4, #changepass h4, #changeinterval h4{
 	margin-top: 5px;
 	font-size: 17px;
 	text-align: center;
 	color: #27ae60;
 
+}
+
+input[type=range]{
+    -webkit-appearance: none;
+    width: 60%;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ccc;
+    border: none;
+    border-radius: 3px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: #27ae60;
+    margin-top: -4px;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
 }
 
 #changeusername, #oldpassword, #newpassword, #confirmpassword, #oldpassword1{

@@ -1,8 +1,10 @@
 #chats{
 	margin-left: 10px;
 	font-size: 20px;
-	height:83%; 
+	height:82%; 
 	margin-right: 10px;
+	overflow: scroll;
+	width: 99.3%;
 }
 
 #userinput{
@@ -23,7 +25,7 @@
 	transition-duration: 0.4s;
 }
 
-#message:hover,:focus{
+#message:focus,#message:hover{
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	transition-duration: 0.4s;
 }
@@ -42,4 +44,9 @@
 	transition-duration: 0.4s;
 	color:#27ae60;
 	background-color: #FFF;
+}
+
+.disabled{
+	cursor: not-allowed;
+	opacity: 0.4px;
 }
